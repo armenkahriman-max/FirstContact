@@ -16,8 +16,10 @@ public class UpdateContactTests
         var service = new ContactService(repository);
         var request = new UpdateContactRequest { Name = "Bobby" };
 
+
         var result = service.UpdateContact(3, request);
 
+        // MME: true is indeed true ;-), test result instead
         Assert.True(true);
         Assert.Equal("Bobby", existing.Name);
         repository.Received().Commit();
@@ -30,7 +32,7 @@ public class UpdateContactTests
         repository.GetById(99).Returns((Contact?)null);
 
         var service = new ContactService(repository);
-        var request = new UpdateContactRequest { Name ="Baylish" };
+        var request = new UpdateContactRequest { Name = "Baylish" };
 
         var result = service.UpdateContact(99, request);
 

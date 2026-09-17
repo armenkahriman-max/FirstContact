@@ -19,6 +19,7 @@ public class SearchTests
     [Fact]
     public void Search_WhenRepositoryFindsContacts_MapsEveryContactToResponse()
     {
+        // MME: Return atleast two Contacts
         var repository = Substitute.For<IContactRepository>();
         repository.Search("Bob").Returns(new List<Contact>
         {
